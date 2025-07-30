@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<title></title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<link rel="stylesheet" href="../css/style.css" type="text/css">
+<style>
+	.index--intro{
+		opacity:0;
+		transform: translateY(-30px);
+	}
+	.index--header__notice{
+		opacity:0;
+		transform: translateX(50px);
+	}
+</style>
+</head>
+<body class="index-wrap">
+<div id="wrap" onclick="location.href='service.html'">
+
+	<div class="index">
+		<div class="index--header">
+			<h1 class="index--header__title">
+				<a href="service.html"><img src="../img/index_tit.png" alt="Touch to start"></a>
+			</h1>
+			<div class="index--header__notice"><img src="../img/index_notice.png" alt="화면을 터치하시면 통역 서비스를 이용하실 수 있어요! You can use the interpretation service  by touching the screen."></div>
+		</div>
+		<div class="index--intro">
+			<img src="../img/index_cnt.png" alt="">
+		</div>
+		<div class="bottom">
+			<div class="konan-chatbot"><img src="../img/index_copy.png" alt=""></div>
+			<div class="copy-konan"><img src="../img/logo_konan.png" alt=""></div>
+		</div>
+	</div>
+</div>
+  <script>
+    window.addEventListener("DOMContentLoaded", () => {
+        gsap.to(".index--intro", {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          ease: "power2.out",
+		  delay: 0.3
+        });
+		gsap.to(".index--header__notice", {
+          opacity: 1,
+          x: 0,
+          duration: 0.8,
+          ease: "power2.out",
+		  delay: 2.0
+        });
+
+		const element = document.querySelector('.index--header__title');
+		element.addEventListener('animationend', () => {
+			element.classList.add('animate-second');
+		});
+	});
+  </script>
+</body>
+</html>
